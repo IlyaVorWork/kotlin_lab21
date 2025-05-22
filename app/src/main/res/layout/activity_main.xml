@@ -8,12 +8,72 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
     <TextView
+            android:layout_marginTop="@dimen/padding"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/interval"
+            android:textSize="@dimen/font_size"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" android:id="@+id/tvInterval"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintBottom_toTopOf="@+id/tvMinutes"/>
+    <TextView
+            android:text="@string/minutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvMinutes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/tvSeconds"
+            app:layout_constraintBottom_toTopOf="@+id/etMinutes"
+            app:layout_constraintTop_toBottomOf="@+id/tvInterval"/>
+    <TextView
+            android:text="@string/seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvSeconds"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvMinutes"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toTopOf="@+id/etMinutes"
+            app:layout_constraintTop_toBottomOf="@+id/tvInterval"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="2"
+            android:id="@+id/etMinutes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toStartOf="@+id/etSeconds"
+            app:layout_constraintBottom_toTopOf="@+id/btnTimer"
+            app:layout_constraintTop_toBottomOf="@+id/tvMinutes"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="2"
+            android:id="@+id/etSeconds"
+            app:layout_constraintStart_toEndOf="@+id/etMinutes"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnTimer"
+            app:layout_constraintTop_toBottomOf="@+id/tvMinutes"/>
+    <Button
+            android:text="@string/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btnTimer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toTopOf="@+id/tvTimerStatus"
+            app:layout_constraintTop_toBottomOf="@+id/etMinutes" app:layout_constraintHorizontal_bias="0.5"/>
+    <TextView
+            android:layout_marginBottom="@dimen/padding"
+            android:text="@string/timer_ready"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tvTimerStatus"
+            android:textSize="@dimen/font_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnTimer" app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

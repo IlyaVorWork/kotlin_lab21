@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC"/>
     <application
             android:allowBackup="true"
             android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +15,10 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.Lab21"
             tools:targetApi="31">
+        <service
+                android:foregroundServiceType="dataSync"
+                android:name=".TimerService"
+                android:exported="true"/>
         <activity
                 android:name=".MainActivity"
                 android:exported="true">

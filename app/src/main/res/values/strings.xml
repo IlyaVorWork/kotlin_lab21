@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Lab21</string>
+    <string name="interval">Интервал:</string>
+    <string name="minutes">Минуты:</string>
+    <string name="seconds">Секунды:</string>
+    <string name="start">Пуск</string>
+    <string name="stop">Стоп</string>
+    <string name="timer_ready">Таймер готов к запуску</string>
+    <string name="timer">%s:%s</string>
 </resources>
